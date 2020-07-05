@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/add}" th:object="${student}" method="POST">
+    <div class="form-row">
+        <div class="col form-group">
+            <label th:text="name"/>
+            <input name="first_name" type="text" class="form-control" th:placeholder="name">
+        </div>
+        <div class="col form-group">
+            <label th:text="age"/>
+            <input name="age" type="number" class="form-control" th:placeholder="age">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" th:text="add"/>
+    </div>
+</form>
+</body>
+</html>
