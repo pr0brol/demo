@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="department">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th th:text="id"/>
+            <th th:text="name"/>
+            <th th:text="age"/>
+            <th th:text="edit"/>
+            <th th:text="delete"/>
+            <th th:text="add"/>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <th th:text="${student.id}"/>
+            <th th:text="${student.first_name}"/>
+            <th th:text="${student.age}"/>
+            <td>
+                <a th:href="@{'/student/edit/' + ${student.id}}" class="btn btn-primary" th:text="edit"/>
+            </td>
+            <td>
+                <a th:href="@{'/student/delete/' + ${student.id}}" class="btn btn-primary" th:text="delete"/>
+            </td>
+            <td>
+                <a th:href="@{'/student/add'}" class="btn btn-primary" th:text="add"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
